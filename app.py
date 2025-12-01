@@ -36,21 +36,11 @@ with st.sidebar:
     st.header("⚙️ Nustatymai")
 
     # API raktai
-    openai_default = os.getenv("OPENAI_API_KEY", "")
-    openai_key = st.text_input(
-        "OpenAI API raktas",
-        type="password",
-        value=openai_default,
-        help="Gausi iš platform.openai.com (API Keys skiltis)."
-    )
-
-    clipdrop_default = os.getenv("CLIPDROP_API_KEY", "")
-    clipdrop_key = st.text_input(
-        "Clipdrop API raktas (nebūtina)",
-        type="password",
-        value=clipdrop_default,
-        help="Naudojamas AI upscalingui, jei suvesi."
-    )
+    clipdrop_key = os.getenv("CLIPDROP_API_KEY", "")
+    if clipdrop_key:
+        st.text("Clipdrop API raktas yra nustatytas.")
+    else:
+        st.text("Clipdrop API raktas nėra nustatytas.")
 
     st.markdown("---")
 
@@ -66,7 +56,7 @@ with st.sidebar:
     )
 
     st.markdown("---")
-    st.caption("💡 Patarimas: API raktus geriau saugoti `.env` arba OS aplinkoje.")
+    st.caption("💡 Patarimas: API raktus geriau saugoti `.streamlit/secrets.toml` arba OS aplinkoje.")
 
 
 st.title("📸 AI Social Media Studio")
@@ -137,9 +127,10 @@ if uploaded_files:
     # 4. Tekstų generavimas
     # ----------------------------------------
     captions = None
+    openai_key = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
     if st.button("✏️ Generuoti 3 tekstus pagal nuotraukas ir kontekstą"):
         if not openai_key:
-            st.error("Reikia OpenAI API rakto tekstų generavimui.")
+            st.error("Reikia OpenAI API rakto tekstų generavimui. Įrašyk jį į .streamlit/secrets.toml arba OS aplinkos kintamuosius.")
         else:
             with st.spinner("Generuojame tekstus su OpenAI..."):
                 try:

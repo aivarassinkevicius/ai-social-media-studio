@@ -62,7 +62,7 @@ Reikalavimai:
         temperature=0.8,
     )
 
-    raw_text = response.choices[0].message["content"]
+    raw_text = response.choices[0].message.content
 
     try:
         return json.loads(raw_text)
