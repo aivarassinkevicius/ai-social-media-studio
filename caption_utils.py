@@ -54,7 +54,7 @@ Reikalavimai:
 """
 
     response = client.chat.completions.create(
-        model="gpt-4.1-mini",  # galima pakeisti į gpt-4o-mini
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "Tu kuri trumpus socialinių tinklų įrašus."},
             {"role": "user", "content": user_prompt}
