@@ -3,3 +3,11 @@ openai
 pillow
 numpy
 requests
+=======
+# ...existing code from tavo_projektas/tavo-projektas/requirements.txt...
+>>>>>>> 0181f6694ff2ea07af2a31dc0f9a0096f239a4b6
+streamlit
+openai
+pillow
+numpy
+requests

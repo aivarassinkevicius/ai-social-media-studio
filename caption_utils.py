@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 from typing import List, Dict
 from PIL import Image
@@ -30,10 +31,6 @@ def generate_captions(
 Tu esi lietuviškas socialinių tinklų marketingo specialistas.
 
 Kontekstas:
-- Sezonas: {season}
-- Šventė: {holiday}
-- Nuotraukų skaičius: {img_count}
-- Bendra nuotraukų atmosfera: {base_desc}
 
 Sugeneruok 3 trumpus socialinių tinklų įrašų tekstus:
 1) "marketing"
@@ -41,10 +38,6 @@ Sugeneruok 3 trumpus socialinių tinklų įrašų tekstus:
 3) "funny"
 
 Reikalavimai:
-- Kalba: lietuvių
-- Kiekvienas variantas turi būti 2–3 sakinių
-- Gali naudoti 2–4 emoji, bet ne per daug
-- Atsakyk griežtai JSON formatu:
 
 {{
   "marketing": "...",
@@ -73,3 +66,6 @@ Reikalavimai:
             "friendly": raw_text,
             "funny": raw_text
         }
+=======
+# ...existing code from tavo_projektas/tavo-projektas/caption_utils.py...
+>>>>>>> 0181f6694ff2ea07af2a31dc0f9a0096f239a4b6
